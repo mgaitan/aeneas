@@ -19,5 +19,5 @@ install:
   - docker pull $DOCKER_IMAGE
 
 script:
-  - docker run -e ARCH=$ARCH- -rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/build-wheels.sh
+  - docker run -e ARCH=$ARCH -rm -v `pwd`:/io $DOCKER_IMAGE $PRE_CMD /io/build-wheels.sh
   - ls wheelhouse/
