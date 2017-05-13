@@ -3,6 +3,7 @@ set -e -x
 
 # Install a system package required by our library
 yum install -y libsndfile-devel libsamplerate-devel
+yum install portaudio
 # yum install -y ffmpeg
 
 # from http://wiki.neuralbs.com/index.php/Installing_Espeak_on_AsteriskNow
