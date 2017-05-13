@@ -13,6 +13,11 @@ rpm -Uvh espeak-devel-1.45.05-4.el5."$ARCH".rpm
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin;  do
+    if [[ "${PYBIN}" == *"cp26"* ]] || \
+       [[ "${PYBIN}" == *"cp33"* ]] || \
+       [[ "${PYBIN}" == *"cp34"* ]] then
+        continue
+    fi
     "${PYBIN}/pip" install -r /io/dev-requirements.txt
     "${PYBIN}/pip" wheel /io/ -w wheelhouse/
 done
