@@ -3,7 +3,7 @@ set -e -x
 
 # Install a system package required by our library
 yum install -y libsndfile-devel libsamplerate-devel
-yum install -y ffmpeg
+# yum install -y ffmpeg
 rpm -Uvh https://repos.jethrocarr.com/pub/amberdms/linux/centos/5/amberdms-os/"$ARCH"/RPMS/espeak-1.45.05-4.el5."$ARCH".rpm
 rpm -Uvh https://repos.jethrocarr.com/pub/amberdms/linux/centos/5/amberdms-os/"$ARCH"/RPMS/espeak-devel-1.45.05-4.el5."$ARCH".rpm
 
