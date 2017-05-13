@@ -6,8 +6,10 @@ yum install -y libsndfile-devel libsamplerate-devel
 # yum install -y ffmpeg
 
 # from http://wiki.neuralbs.com/index.php/Installing_Espeak_on_AsteriskNow
-rpm -Uvh http://repos.amberdms.com/pub/amberdms/linux/centos/5/amberdms-os/"$ARCH"/RPMS/espeak-1.45.05-4.el5."$ARCH".rpm
-rpm -Uvh  http://repos.amberdms.com/pub/amberdms/linux/centos/5/amberdms-os/"$ARCH"/RPMS/espeak-devel-1.45.05-4.el5."$ARCH".rpm
+wget http://repos.amberdms.com/pub/amberdms/linux/centos/5/amberdms-os/"$ARCH"/RPMS/espeak-1.45.05-4.el5."$ARCH".rpm
+rpm -Uvh espeak-1.45.05-4.el5."$ARCH".rpm
+wget http://repos.amberdms.com/pub/amberdms/linux/centos/5/amberdms-os/"$ARCH"/RPMS/espeak-devel-1.45.05-4.el5."$ARCH".rpm
+rpm -Uvh espeak-devel-1.45.05-4.el5."$ARCH".rpm
 
 # Compile wheels
 for PYBIN in /opt/python/*/bin;  do
