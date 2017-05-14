@@ -24,6 +24,8 @@ for PYBIN in /opt/python/*/bin;  do
 done
 
 rm wheelhouse/beautifulsoup4*
+rm wheelhouse/numpy*
+rm wheelhouse/lxml*
 
 # Bundle external shared libraries into the wheels
 for whl in wheelhouse/*.whl; do
