@@ -1,9 +1,6 @@
 notifications:
   email: false
 
-before_install:
-  - sudo apt-get install -y sshpass
-
 matrix:
   include:
     - sudo: required
@@ -11,12 +8,12 @@ matrix:
         - docker
       env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
            ARCH=x86_64
-    #- sudo: required
-    #  services:
-    #    - docker
-    #  env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686
-    #       PRE_CMD=linux32
-    #       ARCH=i386
+    - sudo: required
+      services:
+        - docker
+      env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686
+           PRE_CMD=linux32
+           ARCH=i386
 
 install:
   - docker pull $DOCKER_IMAGE
