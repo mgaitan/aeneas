@@ -33,7 +33,13 @@ for whl in wheelhouse/*.whl; do
 done
 
 # Install packages and test
-# for PYBIN in /opt/python/*/bin/; do
-#     "${PYBIN}/pip" install python-manylinux-demo --no-index -f /io/wheelhouse
-#     (cd "$HOME"; "${PYBIN}/nosetests" pymanylinuxdemo)
-# done
+for PYBIN in /opt/python/*/bin/; do
+    # skip unsupported python versions
+    if [[ "${PYBIN}" == *"cp26"* ]] || \
+       [[ "${PYBIN}" == *"cp33"* ]] || \
+       [[ "${PYBIN}" == *"cp34"* ]] ; then
+        continue
+    fi
+    "${PYBIN}/pip" install aeneas --no-index -f /io/wheelhouse
+    "${PYBIN}/python" -c "import aeneas"
+done
