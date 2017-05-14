@@ -9,7 +9,7 @@ env:
 
 
 before_install:
-  - sudo apt-get -qq sshpass
+  - sudo apt-get install -y sshpass
 
 matrix:
   include:
